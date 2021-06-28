@@ -1,10 +1,10 @@
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:
-  name: default.dmz
+  name: developer.dmz
   namespace: storefront
 spec:
-  tier: default
+  tier: developer
   order: 0
   selector: fw-zone == "dmz"
   serviceAccountSelector: ''
