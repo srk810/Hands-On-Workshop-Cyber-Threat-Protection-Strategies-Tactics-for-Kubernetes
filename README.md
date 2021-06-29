@@ -104,9 +104,19 @@ The Tor-VPN dashboard helps network security teams to monitor and respond to any
 
 # Network Policy based on Threat Feeds
 
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/Hands-On-Workshop-Cyber-Threat-Protection-Strategies-Tactics-for-Kubernetes/main/networkpolicies/feodo-tracker.yaml
+```
 
+```
+kubectl get globalnetworksets threatfeed.feodo-tracker -o yaml
+```
 
+We will need to create a 'security' tier for our threat feed policies
 
+```
+
+```
 
 # HoneyPods
 
