@@ -96,6 +96,9 @@ Now, you can monitor the Dashboard for any malicious activity. The dashboard can
 kubectl get globalthreatfeeds 
 ```
 
+<img width="766" alt="Screenshot 2021-06-29 at 09 21 09" src="https://user-images.githubusercontent.com/82048393/123763218-78141c80-d8bb-11eb-83b9-9faab997ec6d.png">
+
+
 The Tor-VPN dashboard helps network security teams to monitor and respond to any detected activity by Tor and VPN feeds. It provides a cluster context to the detection and shows multiple artifacts e.g. flow logs, filtering controls, a tag cloud and line graph to analyze the activity and respond faster. 
 
 
