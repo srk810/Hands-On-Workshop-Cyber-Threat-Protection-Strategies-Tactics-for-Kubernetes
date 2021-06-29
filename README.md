@@ -144,10 +144,12 @@ kubectl get secret tigera-pull-secret -n tigera-guardian -o json > pull-secret.j
 kubectl create secret generic tigera-pull-secret --from-file=.dockerconfigjson=pull-secret.json --type=kubernetes.io/dockerconfigjson -n tigera-internal
 ```
 
+IP Enumeration: Expose a empty pod that can only be reached via PodIP, we can see when the attacker is probing the pod network:
 ```
 kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/ip-enum.yaml 
 ```
-
+Exposed Nginx Service: Expose a nginx service that serves a generic page. The pod can be discovered via ClusterIP or DNS lookup. 
+An unreachable service tigera-dashboard-internal-service is created to entice the attacker to find and reach, tigera-dashboard-internal-debug:
 ```
 kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/expose-svc.yaml 
 ```
