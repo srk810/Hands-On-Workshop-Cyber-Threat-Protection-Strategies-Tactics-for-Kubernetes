@@ -125,6 +125,33 @@ kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/Hands-On-Wor
 
 # HoneyPods
 
+Apply the following manifest to create a namespace and RBAC for the honeypods:
+```
+kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/common.yaml 
+```
+
+```
+kubectl get secret tigera-pull-secret -n tigera-guardian -o yaml > pull-secret.json
+```
+
+```
+kubectl create secret generic tigera-pull-secret --from-file=.dockerconfigjson=pull-secret.json --type=kubernetes.io/dockerconfigjson -n tigera-internal
+```
+
+```
+kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/ip-enum.yaml 
+```
+
+```
+kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/expose-svc.yaml 
+```
+
+```
+kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/vuln-svc.yaml 
+```
+```
+kubectl get pods -n tigera-internal
+```
 
 
 
