@@ -221,6 +221,9 @@ Monitor pod which name started with ad-jobs-deployment.
 kubectl get pods -n tigera-intrusion-detection -l app=anomaly-detection
 ```
 
+<img width="798" alt="Screenshot 2021-06-29 at 12 34 01" src="https://user-images.githubusercontent.com/82048393/123790559-612ef380-d8d6-11eb-8105-f9393a08d6b4.png">
+
+
 Use the pod logs to monitor the job execution and health.
 ```
 kubectl logs <pod_name> -n tigera-intrusion-detection
