@@ -160,7 +160,8 @@ kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/expose
 kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/vuln-svc.yaml 
 ```
 
-<img width="842" alt="Screenshot 2021-06-29 at 11 13 09" src="https://user-images.githubusercontent.com/82048393/123780338-02b04800-d8cb-11eb-9156-15c45d1c90b8.png">
+<img width="914" alt="Screenshot 2021-06-29 at 12 14 03" src="https://user-images.githubusercontent.com/82048393/123788193-a3a30100-d8d3-11eb-9299-7891c1fa23e9.png">
+
 
 Verify honeypods deployment
 
@@ -171,6 +172,9 @@ kubectl get pods -n tigera-internal
 ```
 kubectl get globalalerts
 ```
+
+<img width="561" alt="Screenshot 2021-06-29 at 12 15 38" src="https://user-images.githubusercontent.com/82048393/123788296-be757580-d8d3-11eb-9841-45b0d3f7ab3d.png">
+
 
 Once you have verified that the honeypods are installed and working, it is recommended to remove the pull secret from the namespace:
 
