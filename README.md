@@ -215,3 +215,18 @@ env:
 kubectl apply -f ad-jobs-deployment.yaml
 ```
 
+The anomaly detection jobs run indefinitely. 
+Monitor pod which name started with ad-jobs-deployment.
+```
+kubectl get pods -n tigera-intrusion-detection -l app=anomaly-detection
+```
+
+Use the pod logs to monitor the job execution and health.
+```
+kubectl logs <pod_name> -n tigera-intrusion-detection
+```
+
+If anomalies are detected, you see a line like this:
+```
+2021-01-20 14:06:13 : INFO : AlertClient: sent 5 alerts with anomalies.
+```
