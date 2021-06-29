@@ -75,15 +75,40 @@ Finally, you should have 3 zones within your development tier - we call this a z
 
 
 
+# Anonymization Attacks
+
+EJR VPN feed targets major VPN providers and their infrastructure used in anonymization activity over the internet. The feed is updated bi-monthly, which helps network security teams to stay on top of threats from such anonymizing infrastructure and detect them early in the enumeration phase.
+
+```
+kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/ejr-vpn.yaml
+```
+
+The Tor Bulk Exit feed lists available Tor exit nodes on the internet which are used by Tor network. The list continuously updated and maintained by the Tor project. An attacker using Tor network, is likely to use one of the bulk exit nodes to connect to your infrastructure. The network security teams can detect such activity with Tor bulk exit feed and investigate as required.
+
+```
+kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/tor-exit-feed.yaml
+```
+
+Now, you can monitor the Dashboard for any malicious activity. The dashboard can be found at Calico Enterprise Manager, go to “kibana” and then go to “Dashboard”. Select “Tor-VPN Dashboard”.
+
+
+```
+kubectl get globalthreatfeeds 
+```
+
+The Tor-VPN dashboard helps network security teams to monitor and respond to any detected activity by Tor and VPN feeds. It provides a cluster context to the detection and shows multiple artifacts e.g. flow logs, filtering controls, a tag cloud and line graph to analyze the activity and respond faster. 
+
+
+# Network Policy based on Threat Feeds
+
+
+
+
+
 # HoneyPods
 
 
 
-
-# Threat Feeds
-
-
-# Anonymization Attacks
 
 
 # Anomaly Detection
