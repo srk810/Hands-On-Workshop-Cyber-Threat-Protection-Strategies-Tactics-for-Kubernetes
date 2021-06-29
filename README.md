@@ -137,7 +137,7 @@ kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/common
 ```
 
 ```
-kubectl get secret tigera-pull-secret -n tigera-guardian -o yaml > pull-secret.json
+kubectl get secret tigera-pull-secret -n tigera-guardian -o json > pull-secret.json
 ```
 
 ```
@@ -159,6 +159,7 @@ kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/vuln-s
 kubectl get pods -n tigera-internal
 ```
 
+<img width="842" alt="Screenshot 2021-06-29 at 11 13 09" src="https://user-images.githubusercontent.com/82048393/123780338-02b04800-d8cb-11eb-9156-15c45d1c90b8.png">
 
 
 
