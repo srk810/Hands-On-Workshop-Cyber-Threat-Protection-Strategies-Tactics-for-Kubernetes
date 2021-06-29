@@ -226,10 +226,16 @@ kubectl get pods -n tigera-intrusion-detection -l app=anomaly-detection
 
 Use the pod logs to monitor the job execution and health.
 ```
-kubectl logs <pod_name> -n tigera-intrusion-detection
+kubectl logs <pod_name> -n tigera-intrusion-detection | grep INFO
 ```
 
 If anomalies are detected, you see a line like this:
 ```
 2021-01-20 14:06:13 : INFO : AlertClient: sent 5 alerts with anomalies.
+```
+
+# Introducing a malicious rogue pod to the cluster
+
+```
+kubectl apply -f https://installer.calicocloud.io/rogue-demo.yaml
 ```
