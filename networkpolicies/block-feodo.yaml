@@ -4,11 +4,17 @@ metadata:
   name: security.block-feodo
 spec:
   tier: security
-  selector: docs.tigera.io/tutorial == 'threat-feed'
-  types:
-  - Egress
+  order: 210
+  selector: projectcalico.org/namespace != "acme"
+  namespaceSelector: ''
+  serviceAccountSelector: ''
   egress:
-  - action: Deny
-    destination:
-      selector: docs.tigera.io/threat/feed == 'feodo'
-  - action: Allow
+    - action: Deny
+      source: {}
+      destination:
+        selector: threatfeed == "feodo"
+  doNotTrack: false
+  applyOnForward: false
+  preDNAT: false
+  types:
+    - Egress
