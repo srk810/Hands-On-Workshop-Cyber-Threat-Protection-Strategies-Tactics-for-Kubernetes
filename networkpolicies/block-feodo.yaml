@@ -1,0 +1,14 @@
+apiVersion: projectcalico.org/v3
+kind: StagedGlobalNetworkPolicy
+metadata:
+  name: security.block-feodo
+spec:
+  tier: security
+  selector: docs.tigera.io/tutorial == 'threat-feed'
+  types:
+  - Egress
+  egress:
+  - action: Deny
+    destination:
+      selector: docs.tigera.io/threat/feed == 'feodo'
+  - action: Allow
