@@ -140,8 +140,10 @@ kubectl apply -f https://docs.tigera.io/v3.7/manifests/threatdef/honeypod/common
 kubectl get secret tigera-pull-secret -n tigera-guardian -o json > pull-secret.json
 ```
 
+edit pull-secret.json, remove creation timestamp, and change namespace from tigera-guardian to tigera-internal
+
 ```
-kubectl create secret generic tigera-pull-secret --from-file=.dockerconfigjson=pull-secret.json --type=kubernetes.io/dockerconfigjson -n tigera-internal
+kubectl apply -f pull-secret.json -n tigera-internal
 ```
 
 IP Enumeration: Expose a empty pod that can only be reached via PodIP, we can see when the attacker is probing the pod network:
