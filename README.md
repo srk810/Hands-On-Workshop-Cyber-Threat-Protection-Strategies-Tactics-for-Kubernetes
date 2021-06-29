@@ -115,10 +115,16 @@ kubectl get globalnetworksets threatfeed.feodo-tracker -o yaml
 We will need to create a 'security' tier for our threat feed policies
 
 ```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/Hands-On-Workshop-Cyber-Threat-Protection-Strategies-Tactics-for-Kubernetes/main/networkpolicies/security.yaml
+```
 
+Create the policy to block traffic that matches the label specified in the threat feed
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/Hands-On-Workshop-Cyber-Threat-Protection-Strategies-Tactics-for-Kubernetes/main/networkpolicies/block-feodo.yaml
 ```
 
 # HoneyPods
+
 
 
 
