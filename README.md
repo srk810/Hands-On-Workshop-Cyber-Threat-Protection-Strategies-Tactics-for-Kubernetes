@@ -186,16 +186,16 @@ kubectl delete secret tigera-pull-secret -n tigera-internal
 
 Download the standalone cluster manifest:
 ```
-curl https://docs.tigera.io/v3.7/manifests/threatdef/ad-jobs-deployment.yaml -O
+curl https://docs.tigera.io/manifests/threatdef/ad-jobs-deployment-managed.yaml -O
 ```
 You'll need to swap out CLUSTER_NAME with the name of your kubernetes cluster:
 ```
-sed -i 's/CLUSTER_NAME/qq9psbdn-management-managed-10-0-1-193/g' ad-jobs-deployment.yaml
+sed -i 's/CLUSTER_NAME/qq9psbdn-management-managed-10-0-1-193/g' ad-jobs-deployment-managed.yaml
 ```
 
 Edit the file using VI:
 ```
-vi ad-jobs-deployment.yaml
+vi ad-jobs-deployment-managed.yaml
 ```
 
 You can configure jobs using the environmental variables:
@@ -212,7 +212,7 @@ env:
 ```
 
 ```
-kubectl apply -f ad-jobs-deployment.yaml
+kubectl apply -f ad-jobs-deployment-managed.yaml
 ```
 
 The anomaly detection jobs run indefinitely. 
